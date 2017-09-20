@@ -20,10 +20,6 @@ call plug#end()
 " General
 " -------
 
-  " Add python interpreters
-  let g:python_host_prog = '/full/path/to/neovim2/bin/python'
-  let g:python3_host_prog = '/full/path/to/neovim3/bin/python'
-
   " Ignore these globs in file completions
   set wildignore+=*.o,*.obj,*.pyc,*.so,*.swp,*.zip,*.jpg,*.gif,*.png,*.pdf
   set wildignore+=.git,.hg,.svn,DS_STORE,bower_components,node_modules
