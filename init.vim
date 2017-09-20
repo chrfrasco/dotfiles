@@ -58,10 +58,10 @@ call plug#end()
   let g:airline_theme = 'gruvbox'
 
   " Disable arrow keys
-  inoremap <up> <nop>
-  inoremap <down> <nop>
-  inoremap <left> <nop>
-  inoremap <right> <nop>
+  nnoremap <up> <nop>
+  nnoremap <down> <nop>
+  nnoremap <left> <nop>
+  nnoremap <right> <nop>
 
 " Airline
 " -------
