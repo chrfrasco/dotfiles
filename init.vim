@@ -11,6 +11,10 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
+  " Elixir plugins
+  Plug 'elixir-editors/vim-elixir'
+  Plug 'slashmili/alchemist.vim'
+
 call plug#end()
 
 " General
