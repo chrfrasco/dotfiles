@@ -49,7 +49,7 @@ call plug#end()
 " -------
 
   " Enable patched fonts
-  " TODO
+  let g:airline_powerline_fonts = 1
 
 " Deoplete
 " --------
