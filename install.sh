@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# TODO:
+# - Install command line tools (brew, git, nvim, etc)
+# - Install nvim plugin manager
+# - Install neovim python plugin
+
 function try_link() {
   if [ ! -f $2 ]; then
     ln -s $1 $2 && echo "symlinked $2"
