@@ -25,8 +25,24 @@ call plug#end()
 
 " General
 " -------
+  
+  " Split settings
+  set splitright
 
-  " Ignore these globs in file completions
+  nnoremap <C-H> <C-W><C-H> 
+  nnoremap <C-J> <C-W><C-J> 
+  nnoremap <C-K> <C-W><C-K> 
+  nnoremap <C-L> <C-W><C-L> 
+
+  " No line wrap
+  set nowrap
+
+  " Disable Ex mode
+  nmap Q <nop>
+
+  " Search settings
+  set path+=**
+  set wildmenu
   set wildignore+=*.o,*.obj,*.pyc,*.so,*.swp,*.zip,*.jpg,*.gif,*.png,*.pdf
   set wildignore+=.git,.hg,.svn,DS_STORE,bower_components,node_modules
 
@@ -40,9 +56,14 @@ call plug#end()
   let mapleader = ","
   let maplocalleader = ","
 
+  " Turn of highlighting for search results
+  nmap <leader>nn :noh<cr>
+
   " Open init.vim in new split and reload
-  nmap <leader>v :vsplit $MYVIMRC<cr>
-  nmap <leader>r :source $MYVIMRC<cr>
+  nmap <leader>cc :edit $MYVIMRC<cr>
+  nmap <leader>cv :vsplit $MYVIMRC<cr>
+  nmap <leader>ch :split $MYVIMRC<cr>
+  nmap <leader>cr :source $MYVIMRC<cr>
 
   " Strip trailing whitespace (,ss)
   " Credit github.com/paulirish
