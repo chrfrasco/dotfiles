@@ -3,6 +3,7 @@ set nocompatible
 call plug#begin()
   " Tim Pope stuff
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-fugitive'
 
   " Completion
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
