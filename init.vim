@@ -21,7 +21,9 @@ call plug#begin()
   
   " Pandoc syntax
   Plug 'vim-pandoc/vim-pandoc-syntax'
-
+  
+  " Ctrl-p
+  Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 " General
