@@ -17,6 +17,9 @@ call plug#begin()
   " Elixir plugins
   Plug 'elixir-editors/vim-elixir'
   Plug 'slashmili/alchemist.vim'
+  
+  " Pandoc syntax
+  Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
 
@@ -84,3 +87,11 @@ call plug#end()
 		let col = col('.') - 1
 		return !col || getline('.')[col - 1]  =~ '\s'
   endfunction
+
+" Pandoc
+" ------
+
+  " Enable syntax for all md files
+  augroup pandoc_syntax
+    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+  augroup END
