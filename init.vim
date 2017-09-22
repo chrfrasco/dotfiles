@@ -18,24 +18,32 @@ call plug#begin()
   " Elixir plugins
   Plug 'elixir-editors/vim-elixir'
   Plug 'slashmili/alchemist.vim'
-  
+
   " Pandoc syntax
   Plug 'vim-pandoc/vim-pandoc-syntax'
-  
+
   " Ctrl-p
   Plug 'ctrlpvim/ctrlp.vim'
+
+  " JSX
+  Plug 'pangloss/vim-javascript'
+  Plug 'mxw/vim-jsx'
+
+  " coffeescript
+  Plug 'kchmck/vim-coffee-script'
+
 call plug#end()
 
 " General
 " -------
-  
+
   " Split settings
   set splitright
 
-  nnoremap <C-H> <C-W><C-H> 
-  nnoremap <C-J> <C-W><C-J> 
-  nnoremap <C-K> <C-W><C-K> 
-  nnoremap <C-L> <C-W><C-L> 
+  nnoremap <C-H> <C-W><C-H>
+  nnoremap <C-J> <C-W><C-J>
+  nnoremap <C-K> <C-W><C-K>
+  nnoremap <C-L> <C-W><C-L>
 
   " No line wrap
   set nowrap
@@ -67,6 +75,9 @@ call plug#end()
   nmap <leader>cv :vsplit $MYVIMRC<cr>
   nmap <leader>ch :split $MYVIMRC<cr>
   nmap <leader>cr :source $MYVIMRC<cr>
+
+  " Install plugins
+  nmap <leader>pi :PlugInstall<cr>
 
   " Strip trailing whitespace (,ss)
   " Credit github.com/paulirish
@@ -104,12 +115,12 @@ call plug#end()
 
   " Cycle through completions with <Tab>
   inoremap <silent><expr> <TAB>
-		\ pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ deoplete#mappings#manual_complete()
-		function! s:check_back_space() abort
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~ '\s'
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ deoplete#mappings#manual_complete()
+    function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
   endfunction
 
 " Pandoc
@@ -119,3 +130,9 @@ call plug#end()
   augroup pandoc_syntax
     au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
   augroup END
+
+" Ctrl-p
+" ------
+
+  " ignore directories
+  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
