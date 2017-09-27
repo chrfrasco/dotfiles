@@ -32,6 +32,9 @@ call plug#begin()
   " coffeescript
   Plug 'kchmck/vim-coffee-script'
 
+  " fish shell
+  Plug 'dag/vim-fish'
+
 call plug#end()
 
 " General
