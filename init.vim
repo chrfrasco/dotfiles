@@ -32,6 +32,9 @@ call plug#begin()
   " coffeescript
   Plug 'kchmck/vim-coffee-script'
 
+  " updated css syntax
+  Plug 'hail2u/vim-css3-syntax'
+
 call plug#end()
 
 " General
