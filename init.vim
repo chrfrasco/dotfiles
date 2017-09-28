@@ -35,6 +35,9 @@ call plug#begin()
   " updated css syntax
   Plug 'hail2u/vim-css3-syntax'
 
+  " fish shell
+  Plug 'dag/vim-fish'
+
 call plug#end()
 
 " General
@@ -139,3 +142,9 @@ call plug#end()
 
   " ignore directories
   let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" vim-jsx
+" =======
+
+  " don't need .jsx extension
+  let g:jsx_ext_required = 0
