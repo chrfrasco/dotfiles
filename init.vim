@@ -10,6 +10,8 @@ call plug#begin()
 
   " Colorschemes
   Plug 'morhetz/gruvbox'
+  Plug 'chrfrasco/vim-github-colorscheme'
+  Plug 'NLKNguyen/papercolor-theme'
 
   " Themeing
   Plug 'vim-airline/vim-airline'
@@ -22,8 +24,9 @@ call plug#begin()
   " Pandoc syntax
   Plug 'vim-pandoc/vim-pandoc-syntax'
 
-  " Ctrl-p
-  Plug 'ctrlpvim/ctrlp.vim'
+  " FZF
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 
   " JSX
   Plug 'pangloss/vim-javascript'
@@ -97,9 +100,9 @@ call plug#end()
   noremap <leader>ss :call StripWhitespace ()<CR>
 
   " Colorschemes
-  set background=dark
-  colorscheme gruvbox
-  let g:airline_theme = 'gruvbox'
+  set background=light
+  colorscheme PaperColor
+  let g:airline_theme = 'sol'
 
   " Disable arrow keys
   nnoremap <up> <nop>
@@ -137,14 +140,13 @@ call plug#end()
     au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
   augroup END
 
-" Ctrl-p
-" ------
-
-  " ignore directories
-  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
 " vim-jsx
 " =======
 
   " don't need .jsx extension
   let g:jsx_ext_required = 0
+
+" FZF
+" ===
+
+  map <C-p> :Files<CR>
