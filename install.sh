@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# TODO:
+# TODO
 # - Install command line tools (brew, git, nvim, etc)
-# - Install nvim plugin manager
 # - Install neovim python plugin
 
 function try_link() {
@@ -13,11 +12,23 @@ function try_link() {
   fi
 }
 
-# Copy init.vim
-try_link ~/dotfiles/init.vim ~/.config/nvim/init.vim
+mkdir ~/.config
 
-# Copy all ftplugin files
-try_link ~/dotfiles/ftplugin ~/.config/nvim/ftplugin
+# install vim-plug
+if ! test ~/.local/share/nvim/site/autoload/plug.vim ; then
+  printf 'installing vim-plug... '
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  echo 'done'
+else
+  echo 'vim-plug alredy installed, continuing'
+fi
+
+# Copy nvim files
+try_link ~/dotfiles/nvim ~/.config/nvim
 
 # Copy .vimrc
 try_link ~/dotfiles/vimrc ~/.vimrc
+
+# copy fish files
+try_link ~/dotfiles/fish ~/.config/fish
