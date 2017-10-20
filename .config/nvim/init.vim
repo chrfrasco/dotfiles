@@ -21,12 +21,18 @@ call plug#begin()
   Plug 'elixir-editors/vim-elixir'
   Plug 'slashmili/alchemist.vim'
 
+  " Go plugins
+  Plug 'fatih/vim-go'
+
   " Pandoc syntax
   Plug 'vim-pandoc/vim-pandoc-syntax'
 
   " FZF
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+
+  " GOYO
+  Plug 'junegunn/goyo.vim'
 
   " JSX
   Plug 'pangloss/vim-javascript'
@@ -80,10 +86,10 @@ call plug#end()
   nmap <leader>nn :noh<cr>
 
   " Open init.vim in new split and reload
-  nmap <leader>cc :edit $MYVIMRC<cr>
-  nmap <leader>cv :vsplit $MYVIMRC<cr>
-  nmap <leader>ch :split $MYVIMRC<cr>
-  nmap <leader>cr :source $MYVIMRC<cr>
+  let vimrc = "~/dotfiles/.config/nvim/init.vim"
+  nmap <leader>cc :exec "edit " . vimrc<cr>
+  nmap <leader>cv :exec "evsplit" . vimrc<cr>
+  nmap <leader>ch :exec "split" . vimrc<cr>
 
   " Install plugins
   nmap <leader>pi :PlugInstall<cr>
@@ -149,4 +155,5 @@ call plug#end()
 " FZF
 " ===
 
-  map <C-p> :Files<CR>
+  nmap ; :Buffers<CR>
+  nmap <C-p> :Files<CR>

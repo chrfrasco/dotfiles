@@ -1,4 +1,4 @@
-function todays_note
+function todays_note -d "create a note for the day"
   set todays_note_dir (date "+$HOME/Dropbox/daily_notes/%Y/%b/")
   set todays_filename (date '+%A-%d.md')
 
